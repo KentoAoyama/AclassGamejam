@@ -178,7 +178,7 @@ public class Janken : MonoBehaviour
 
     void JankenSystem(KeyCode x,ref bool a)
     {
-        if (Input.GetKeyDown(x)) //&& GameManager._amh == false)
+        if (Input.GetKeyDown(x)&& GameManager._amh == false)
         {
             a = true;
             Debug.Log("ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚æ");
