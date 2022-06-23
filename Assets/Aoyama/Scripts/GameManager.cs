@@ -9,13 +9,11 @@ public class GameManeger : MonoBehaviour
     public static bool _1pWinner;
     public static bool _2pWinner;
 
-
-    void Start()
+    void OnEnable()
     {
-    }
-
-    void Update()
-    {
-        
+        _1pWinCount = 0;
+        _2pWinCount = 0;
+        _1pWinner = false;
+        _2pWinner = false;
     }
 }
