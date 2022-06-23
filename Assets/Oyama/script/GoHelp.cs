@@ -16,8 +16,9 @@ public class GoHelp : MonoBehaviour
     {
         
     }
-    void gohelp(string y)
+    public void gohelp(string y)
     {
+        Debug.Log("OnButtonClick");
         SceneManager.LoadScene(y);
     }
 }
