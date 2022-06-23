@@ -18,12 +18,21 @@ public class ScoreCount1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void UpdateScore(float change)
     {
-        _currentScore = Mathf.Clamp(_currentScore + change, 0, _maxScore);
-        _Score.fillAmount = _currentScore * _maxScore;
+        if(GameManeger._1pWinCount <= _maxScore)
+        {
+            _currentScore = Mathf.Clamp(_currentScore + change, 0, _maxScore);
+            _Score.fillAmount = _currentScore / _maxScore;
+        }
+
+        else if(GameManeger._2pWinCount <= _maxScore)
+        {
+            _currentScore = Mathf.Clamp(_currentScore + change, 0, _maxScore);
+            _Score.fillAmount = _currentScore / _maxScore;
+        }
     }
 }
