@@ -23,13 +23,13 @@ public class ScoreCount1 : MonoBehaviour
 
     public void UpdateScore(float change)
     {
-        if(GameManeger._1pWinCount <= _maxScore)
+        if(GameManager._1pWinCount <= _maxScore)
         {
             _currentScore = Mathf.Clamp(_currentScore + change, 0, _maxScore);
             _Score.fillAmount = _currentScore / _maxScore;
         }
 
-        else if(GameManeger._2pWinCount <= _maxScore)
+        else if(GameManager._2pWinCount <= _maxScore)
         {
             _currentScore = Mathf.Clamp(_currentScore + change, 0, _maxScore);
             _Score.fillAmount = _currentScore / _maxScore;
