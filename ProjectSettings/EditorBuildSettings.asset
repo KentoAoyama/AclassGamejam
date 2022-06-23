@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Oyama/sceans/Title.unity
     guid: e8eee968dfdcb0c4c985f75c93bae34e
+  - enabled: 1
+    path: Assets/Omori/ResultScene.unity
+    guid: 0b0c089fd4e9a9242a0c41b81b2a9627
   m_configObjects: {}
