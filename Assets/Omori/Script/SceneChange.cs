@@ -19,6 +19,8 @@ public class SceneChange : MonoBehaviour
 
     public void ChangeScene()
     {
+        GameManager._1pWinCount = 0;
+        GameManager._2pWinCount = 0;
         SceneManager.LoadScene("Title");
     }
 }

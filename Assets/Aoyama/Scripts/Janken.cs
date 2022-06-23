@@ -97,82 +97,95 @@ public class Janken : MonoBehaviour
   
             if (_1g == true && _2g == true)
             {
-                _1g = false;
+            GameManager._amh = true;
+            _1g = false;
                 _2g = false;
+            Invoke("DestroyHands", 2f);
+            Invoke("Aiko", 2f);
 
-                Invoke("DestroyHands", 3f);
             }
             if (_1g == true && _2c == true)
             {
-                _1g = false;
+            GameManager._amh = true;
+            _1g = false;
                 _2c = false;
 
                 _1pWin = true;
 
-                Invoke("DestroyHands", 3f);
+                Invoke("DestroyHands", 2f);
             }
             if (_1g == true && _2p == true)
             {
-                _1g = false;
+            GameManager._amh = true;
+            _1g = false;
                 _2p = false;
 
                 _2pWin = true;
 
-                Invoke("DestroyHands", 3f);
+                Invoke("DestroyHands", 2f);
             }
             
 
             if (_1c == true && _2g == true)
             {
-                _1c = false;
+            GameManager._amh = true;
+            _1c = false;
                 _2g = false;
 
                 _2pWin = true;
 
-                Invoke("DestroyHands", 3f);
+                Invoke("DestroyHands", 2f);
             }
             if (_1c == true && _2c == true)
             {
-                _1c = false;
+            GameManager._amh = true;
+            _1c = false;
+                
                 _2c = false;
 
-                Invoke("DestroyHands", 3f);
-            }
+                Invoke("DestroyHands", 2f);
+            Invoke("Aiko", 3f);
+        }
             if (_1c == true && _2p == true)
             {
-                _1c = false;
+            GameManager._amh = true;
+            _1c = false;
                 _2p = false;
 
                 _1pWin = true;
-             Invoke("DestroyHands", 3f);
+             Invoke("DestroyHands", 2f);
             }
 
 
             if (_1p == true && _2g == true)
             {
-                _1p = false;
+            GameManager._amh = true;
+            _1p = false;
                 _2g = false;
 
                 _1pWin = true;
                 
-                Invoke("DestroyHands", 3f);
+                Invoke("DestroyHands", 2f);
             }
             if (_1p == true && _2c == true)
             {
-                _1p = false;
+            GameManager._amh = true;
+            _1p = false;
                 _2c = false;
 
                 _2pWin = true;
 
-                Invoke("DestroyHands", 3f);
+                Invoke("DestroyHands", 2f);
             }
             if (_1p == true && _2p == true)
             {
-                _1p = false;
+            GameManager._amh = true;
+            _1p = false;
                 _2p = false;
 
-             Invoke("DestroyHands", 3f);
-            }
+             Invoke("DestroyHands", 2f);
+            Invoke("Aiko", 2f);
+        }
     }
 
 
@@ -203,7 +216,7 @@ public class Janken : MonoBehaviour
        
        if (_1pWin || _2pWin)
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(2);
             _AMT.SetActive(true);
 
             if(_1pWin)
@@ -216,10 +229,15 @@ public class Janken : MonoBehaviour
             }
 
            
-            GameManager._amh = true;
             _1pWin = false;
             _2pWin = false;
         }
+
+    }
+
+    void Aiko()
+    {
+        GameManager._amh = false;
     }
 
 

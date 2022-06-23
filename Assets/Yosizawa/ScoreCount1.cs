@@ -5,15 +5,14 @@ using UnityEngine.UI;
 
 public class ScoreCount1 : MonoBehaviour
 {
-    [SerializeField] private Image _Score1;
-    [SerializeField] private Image _Score2;
-    [SerializeField] private float _maxScore;
+    [SerializeField]  Image _Score1;
+    [SerializeField]  Image _Score2;
+    [SerializeField]  float _maxScore;
 
     // Start is called before the first frame update
-    private float _currentScore;
     void Start()
     {
-        _currentScore = 0;
+      
     }
 
     // Update is called once per frame
@@ -21,7 +20,7 @@ public class ScoreCount1 : MonoBehaviour
     {
         if(GameManager._1pWinCount == 0)
         {
-            _Score1.fillAmount = _currentScore;
+            _Score1.fillAmount = 0;
         }
 
        if(GameManager._1pWinCount == 1)
@@ -39,7 +38,7 @@ public class ScoreCount1 : MonoBehaviour
 
         if (GameManager._2pWinCount == 0)
         {
-            _Score2.fillAmount = _currentScore;
+            _Score2.fillAmount = 0;
         }
         if (GameManager._2pWinCount == 1)
         {
