@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameUI : MonoBehaviour
+public class ScoreCount1 : MonoBehaviour
 {
     [SerializeField] private Image _Score;
     [SerializeField] private float _maxScore;
@@ -21,7 +21,7 @@ public class GameUI : MonoBehaviour
         
     }
 
-    private void UpdateScore(float change)
+    public void UpdateScore(float change)
     {
         _currentScore = Mathf.Clamp(_currentScore + change, 0, _maxScore);
         _Score.fillAmount = _currentScore * _maxScore;
