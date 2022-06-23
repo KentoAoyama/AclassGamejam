@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class AMT_Manager : MonoBehaviour
 {
 
@@ -56,9 +56,13 @@ public class AMT_Manager : MonoBehaviour
     [SerializeField] GameObject Migi_Face_2;
     [SerializeField] GameObject Hidari_Face_2;
 
+    [SerializeField] Text _text;
+
+    [SerializeField] GameObject _janken;
+    [SerializeField] Janken _jan;
 
 
-
+    
     void Start()
     {
         
@@ -74,6 +78,7 @@ public class AMT_Manager : MonoBehaviour
 
             _startgame_p1_Attack = true;
              _next_attack1 = false;
+            _janken.SetActive(false);
         }
 
 
@@ -81,9 +86,10 @@ public class AMT_Manager : MonoBehaviour
         {
             Defolt_Face1.SetActive(true);
             Defolt_Yubi2.SetActive(true);
-
             _startgame_p1_Defend = true;
             _next_defend1 = false;
+
+            _janken.SetActive(false);
         }
 
 
@@ -112,45 +118,51 @@ public class AMT_Manager : MonoBehaviour
         {
             Ue_Yubi_2.SetActive(true);
             Ue_Face_1.SetActive(true);
-            win2++;
+            GameManager._2pWinCount++;
             _startgame_p1_Defend = false;
-            Debug.Log("P2èüÇø");
             Invoke("ResetKey", 2);
+            _text.text = "Player2ÇÃèüÇø";
+            StartCoroutine(Next());
         }
         else if (p2_attack == "Right" && p1_defend == "Right")
         {
             Migi_Yubi_2.SetActive(true);
             Migi_Face_1.SetActive(true);
-            win2++;
+            GameManager._2pWinCount++;
             _startgame_p1_Defend = false;
-            Debug.Log("P2èüÇø");
+            _text.text = "Player2ÇÃèüÇø";
+
             Invoke("ResetKey", 2);
+            StartCoroutine(Next());
         }
         else if (p2_attack == "Left" && p1_defend == "Left")
         {
             Hidari_Yubi_2.SetActive(true);
             Hidari_Face_1.SetActive(true);
-            win2++;
+            GameManager._2pWinCount++;
             _startgame_p1_Defend = false;
-            Debug.Log("P2èüÇø");
+            _text.text = "Player2ÇÃèüÇø";
             Invoke("ResetKey", 2);
+            StartCoroutine(Next());
         }
         else if (p2_attack == "Down" && p1_defend == "Down")
         {
             Sita_Yubi_2.SetActive(true);
             Sita_Face_1.SetActive(true);
-            win2++;
+            GameManager._2pWinCount++;
             _startgame_p1_Defend = false;
-            Debug.Log("P2èüÇø");
+            _text.text = "Player2ÇÃèüÇø";
             Invoke("ResetKey", 2);
+            StartCoroutine(Next());
         }
         else if(p2_attack!=p1_defend)
         {
             Gazo2Attack();
             Gazo1Defend();
             _startgame_p1_Defend = false;
-            Debug.Log("P2ïâÇØ");
-            Invoke("ResetKey", 2);
+            _text.text = "One More Janken";
+            ResetKey();
+            StartCoroutine(Next());
         }
 
     }
@@ -163,41 +175,52 @@ public class AMT_Manager : MonoBehaviour
         {
             Ue_Yubi_1.SetActive(true);
             Ue_Face_2.SetActive(true);
-            win1++;
+            GameManager._1pWinCount++;
             _startgame_p1_Attack = false;
             Invoke("ResetKey", 2);
+            _text.text = "Player1ÇÃèüÇø";
+            StartCoroutine(Next());
         }
           else if (p1_attack == "Right" && p2_defend == "Right")
         {
             Migi_Yubi_1.SetActive(true);
             Migi_Face_2.SetActive(true);
-            win1++;
+            GameManager._1pWinCount++;
             _startgame_p1_Attack = false;
             Invoke("ResetKey", 2);
+            _text.text = "Player1ÇÃèüÇø";
+            StartCoroutine(Next());
         }
           else if (p1_attack == "Left" && p2_defend == "Left")
         {
             Hidari_Yubi_1.SetActive(true);
             Hidari_Face_2.SetActive(true);
-            win1++;
+            GameManager._1pWinCount++;
             _startgame_p1_Attack = false;
             Invoke("ResetKey", 2);
+            _text.text = "Player1ÇÃèüÇø";
+            StartCoroutine(Next());
         }
           else if (p1_attack == "Down" && p2_defend == "Down")
         {
             Sita_Yubi_1.SetActive(true);
             Sita_Face_2.SetActive(true);
-            win1++;
+            GameManager._1pWinCount++;
             _startgame_p1_Attack = false;
             Invoke("ResetKey", 2);
+           // _janken.SetActive(true);
+            _text.text = "Player1ÇÃèüÇø";
+            StartCoroutine(Next()); ;
+
         }
             else if (p1_attack != p2_defend)
         {
             Gazo1Attack();
             Gazo2Defend();
             _startgame_p1_Attack = false;
-            Debug.Log("P1ïâÇØ");
-            Invoke("ResetKey", 2);
+            _text.text = "One More Janken";
+            ResetKey();
+            StartCoroutine(Next());
         }
 
 
@@ -286,6 +309,24 @@ public class AMT_Manager : MonoBehaviour
 
     void ResetKey()
     {
+
+
+        p1_attack = null;
+        p1_defend = null;
+        p2_attack = null;
+        p2_defend = null;
+
+        _attack1._okattack1 = false;
+        _attack2._okattack2 = false;
+        _defend1._okdefend1 = false;
+        _defend2._okdefend2 = false;
+    }
+
+
+    IEnumerator Next()
+    {
+        yield return new WaitForSeconds(5);
+
         Ue_Yubi_1.SetActive(false);
         Sita_Yubi_1.SetActive(false);
         Migi_Yubi_1.SetActive(false);
@@ -306,16 +347,11 @@ public class AMT_Manager : MonoBehaviour
         Hidari_Face_2.SetActive(false);
         Sita_Face_2.SetActive(false);
 
+        GameManager._amh = true;
+        _janken.SetActive(true);
+        this.gameObject.SetActive(false);
 
-
-        p1_attack = null;
-        p1_defend = null;
-        p2_attack = null;
-        p2_defend = null;
-
-        _attack1._okattack1 = false;
-        _attack2._okattack2 = false;
-        _defend1._okdefend1 = false;
-        _defend2._okdefend2 = false;
+        _text.text = null;
     }
+
 }
