@@ -189,11 +189,12 @@ public class AMT_Manager : MonoBehaviour
 
         if(p1_attack=="Up"&&p2_defend=="Up")
         {
+            StartCoroutine(Next());
             Ue_Yubi_1.SetActive(true);
             Ue_Face_2.SetActive(true);
             GameManager._1pWinCount++;
             _startgame_p1_Attack = false;
-            StartCoroutine(Next());
+            
             ResetKey();
             _text.text = "Player1ÇÃèüÇø";
            
@@ -342,7 +343,7 @@ public class AMT_Manager : MonoBehaviour
 
     IEnumerator Next()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         Ue_Yubi_1.SetActive(false);
         Sita_Yubi_1.SetActive(false);

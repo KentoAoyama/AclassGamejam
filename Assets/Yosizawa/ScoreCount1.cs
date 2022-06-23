@@ -18,39 +18,50 @@ public class ScoreCount1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager._1pWinCount == 0)
-        {
-            _Score1.fillAmount = 0;
-        }
+       
 
-       if(GameManager._1pWinCount == 1)
-        {
-            _Score1.fillAmount = 0.33f;
-        }
-        if (GameManager._1pWinCount == 2)
-        {
-            _Score1.fillAmount = 0.66f;
-        }
         if(GameManager._1pWinCount == 3)
         {
-            _Score1.fillAmount = 1f;
+           _Score2.fillAmount = 1f;
         }
-
-        if (GameManager._2pWinCount == 0)
-        {
-            _Score2.fillAmount = 0;
-        }
-        if (GameManager._2pWinCount == 1)
-        {
-            _Score2.fillAmount = 0.33f;
-        }
-        if (GameManager._2pWinCount == 2)
+        else if (GameManager._1pWinCount == 2)
         {
             _Score2.fillAmount = 0.66f;
         }
-        if (GameManager._2pWinCount == 3)
+       
+      else  if(GameManager._1pWinCount == 1)
         {
-            _Score2.fillAmount = 1f;
+          _Score2.fillAmount = 0.33f;
+
+        }
+       else if(GameManager._1pWinCount == 0)
+        {
+            
+_Score2.fillAmount = 0;
+        }
+       
+      
+      
+         if (GameManager._2pWinCount == 3)
+        {
+            
+ _Score1.fillAmount = 1f;
+        }
+         else if (GameManager._2pWinCount == 2)
+        {
+            
+_Score1.fillAmount = 0.66f;
+        }
+        
+       else if (GameManager._2pWinCount == 1)
+        {
+            
+  _Score1.fillAmount = 0.33f;
+        }
+      else  if (GameManager._2pWinCount == 0)
+        {
+            
+_Score1.fillAmount = 0;
         }
     }
 
