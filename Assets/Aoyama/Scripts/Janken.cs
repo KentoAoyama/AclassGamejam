@@ -15,7 +15,8 @@ public class Janken : MonoBehaviour
     [SerializeField] GameObject _2cho;
     [SerializeField] GameObject _2pa;
 
-    
+    [SerializeField] GameObject _AMT;
+    [SerializeField] AMT_Manager _amt;
 
     //‚PP‚¶‚á‚ñ‚¯‚ñ
     bool _1g;
@@ -79,12 +80,7 @@ public class Janken : MonoBehaviour
         }
 
 
-        if (_1pWin || _2pWin)
-        {
-            GameManager._amh = true;
-            _1pWin = false;
-            _2pWin = false;
-        }
+        StartCoroutine(next());
 
 
         if (_1sellected && _2sellected)  //—¼•û‚ª‰Ÿ‚³‚ê‚Ä‚½‚ç
@@ -104,7 +100,7 @@ public class Janken : MonoBehaviour
                 _1g = false;
                 _2g = false;
 
-                Invoke("DestroyHands", 0.5f);
+                Invoke("DestroyHands", 3f);
             }
             if (_1g == true && _2c == true)
             {
@@ -113,7 +109,7 @@ public class Janken : MonoBehaviour
 
                 _1pWin = true;
 
-                Invoke("DestroyHands", 0.5f);
+                Invoke("DestroyHands", 3f);
             }
             if (_1g == true && _2p == true)
             {
@@ -122,7 +118,7 @@ public class Janken : MonoBehaviour
 
                 _2pWin = true;
 
-                Invoke("DestroyHands", 0.5f);
+                Invoke("DestroyHands", 3f);
             }
             
 
@@ -133,14 +129,14 @@ public class Janken : MonoBehaviour
 
                 _2pWin = true;
 
-                Invoke("DestroyHands", 0.5f);
+                Invoke("DestroyHands", 3f);
             }
             if (_1c == true && _2c == true)
             {
                 _1c = false;
                 _2c = false;
 
-                Invoke("DestroyHands", 0.5f);
+                Invoke("DestroyHands", 3f);
             }
             if (_1c == true && _2p == true)
             {
@@ -148,7 +144,7 @@ public class Janken : MonoBehaviour
                 _2p = false;
 
                 _1pWin = true;
-             Invoke("DestroyHands", 0.5f);
+             Invoke("DestroyHands", 3f);
             }
 
 
@@ -159,7 +155,7 @@ public class Janken : MonoBehaviour
 
                 _1pWin = true;
                 
-                Invoke("DestroyHands", 0.5f);
+                Invoke("DestroyHands", 3f);
             }
             if (_1p == true && _2c == true)
             {
@@ -168,21 +164,21 @@ public class Janken : MonoBehaviour
 
                 _2pWin = true;
 
-                Invoke("DestroyHands", 0.5f);
+                Invoke("DestroyHands", 3f);
             }
             if (_1p == true && _2p == true)
             {
                 _1p = false;
                 _2p = false;
 
-             Invoke("DestroyHands", 0.5f);
+             Invoke("DestroyHands", 3f);
             }
     }
 
 
     void JankenSystem(KeyCode x,ref bool a)
     {
-        if (Input.GetKeyDown(x) && GameManager._amh == false)
+        if (Input.GetKeyDown(x)) //&& GameManager._amh == false)
         {
             a = true;
             Debug.Log("ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚æ");
@@ -200,4 +196,31 @@ public class Janken : MonoBehaviour
         _2cho.SetActive(false);
         _2pa.SetActive(false);
     }
+
+
+    IEnumerator next()
+    {
+       
+       if (_1pWin || _2pWin)
+        {
+            yield return new WaitForSeconds(3);
+            _AMT.SetActive(true);
+
+            if(_1pWin)
+            {
+                _amt._next_attack1 = true;
+            }
+            else if(_2pWin)
+            {
+                _amt._next_defend1 = true;
+            }
+
+           
+            GameManager._amh = true;
+            _1pWin = false;
+            _2pWin = false;
+        }
+    }
+
+
 }

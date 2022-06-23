@@ -30,22 +30,22 @@ public class Defend2 : MonoBehaviour
     void Defend()
     {
 
-        if (Input.GetKeyDown("i"))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             _okdefend2 = true;
             _amt.p2_defend = "Up";
         }
-        if (Input.GetKeyDown("l"))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             _okdefend2 = true;
             _amt.p2_defend = "Right";
         }
-        if (Input.GetKeyDown("k"))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             _okdefend2 = true;
             _amt.p2_defend = "Left";
         }
-        if (Input.GetKeyDown("j"))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             _okdefend2 = true;
             _amt.p2_defend = "Down";

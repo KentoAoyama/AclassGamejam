@@ -7,8 +7,10 @@ public class audioController : MonoBehaviour
 {
     [SerializeField] Slider _slider;
     [SerializeField] AudioSource _volume;
-    public static float _hikitugi;
+     public static float _hikitugi;
     [SerializeField] GameObject _Gslider;
+    [SerializeField] Button _b;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +27,12 @@ public class audioController : MonoBehaviour
     public void Opensettei()
     {
         _Gslider.SetActive(true);
+        _b.enabled = false;
     }
 
     public void Closesettei()
     {
         _Gslider.SetActive(false);
+        _b.enabled = true;
     }
 }

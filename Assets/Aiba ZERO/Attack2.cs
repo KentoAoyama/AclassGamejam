@@ -29,23 +29,23 @@ public class Attack2 : MonoBehaviour
     void Attack()
     {
 
-        if (Input.GetKeyDown("i"))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Debug.Log("i");
             _okattack2 = true;
             _amt.p2_attack = "Up";
         }
-        if (Input.GetKeyDown("l"))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             _okattack2 = true;
             _amt.p2_attack = "Right";
         }
-        if (Input.GetKeyDown("j"))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             _okattack2 = true;
             _amt.p2_attack = "Left";
         }
-        if (Input.GetKeyDown("k"))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             _okattack2 = true;
             _amt.p2_attack = "Down";
