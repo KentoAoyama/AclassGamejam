@@ -157,7 +157,7 @@ RectTransform:
   - {fileID: 488553945}
   - {fileID: 175063193}
   m_Father: {fileID: 212529547}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -379,8 +379,8 @@ RectTransform:
   - {fileID: 1972498172}
   - {fileID: 1505635962}
   - {fileID: 1606782574}
-  - {fileID: 133893269}
   - {fileID: 1067006846}
+  - {fileID: 133893269}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -426,7 +426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 177.4, y: -236.4}
+  m_AnchoredPosition: {x: 189, y: -161}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &488553946
@@ -909,11 +909,11 @@ RectTransform:
   m_Children:
   - {fileID: 1448573098}
   m_Father: {fileID: 212529547}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 260, y: -279}
+  m_AnchoredPosition: {x: 278, y: -208}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1067006847
@@ -985,7 +985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1660,6 +1660,7 @@ MonoBehaviour:
   _slider: {fileID: 1503667644}
   _volume: {fileID: 1683758558}
   _Gslider: {fileID: 133893268}
+  _b: {fileID: 1067006847}
 --- !u!4 &1625421519
 Transform:
   m_ObjectHideFlags: 0
