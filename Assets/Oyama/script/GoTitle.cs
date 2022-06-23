@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GoGame : MonoBehaviour
+public class GoTitle : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,10 +14,10 @@ public class GoGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+ 
     }
-    public void gogame(string x)
+    public void gotitle(string z)
     {
-        SceneManager.LoadScene(x);
+        SceneManager.LoadScene(z);
     }
 }
