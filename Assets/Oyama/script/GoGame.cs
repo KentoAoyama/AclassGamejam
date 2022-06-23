@@ -16,7 +16,7 @@ public class GoGame : MonoBehaviour
     {
 
     }
-    void gogame(string x)
+    public void gogame(string x)
     {
         SceneManager.LoadScene(x);
     }
