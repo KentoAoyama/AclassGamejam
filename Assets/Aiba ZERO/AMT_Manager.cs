@@ -120,7 +120,7 @@ public class AMT_Manager : MonoBehaviour
             Ue_Face_1.SetActive(true);
             GameManager._2pWinCount++;
             _startgame_p1_Defend = false;
-            Invoke("ResetKey", 2);
+            ResetKey();
             _text.text = "Player2‚ÌŸ‚¿";
             StartCoroutine(Next());
         }
@@ -132,7 +132,7 @@ public class AMT_Manager : MonoBehaviour
             _startgame_p1_Defend = false;
             _text.text = "Player2‚ÌŸ‚¿";
 
-            Invoke("ResetKey", 2);
+            ResetKey();
             StartCoroutine(Next());
         }
         else if (p2_attack == "Left" && p1_defend == "Left")
@@ -142,7 +142,7 @@ public class AMT_Manager : MonoBehaviour
             GameManager._2pWinCount++;
             _startgame_p1_Defend = false;
             _text.text = "Player2‚ÌŸ‚¿";
-            Invoke("ResetKey", 2);
+            ResetKey();
             StartCoroutine(Next());
         }
         else if (p2_attack == "Down" && p1_defend == "Down")
@@ -152,7 +152,7 @@ public class AMT_Manager : MonoBehaviour
             GameManager._2pWinCount++;
             _startgame_p1_Defend = false;
             _text.text = "Player2‚ÌŸ‚¿";
-            Invoke("ResetKey", 2);
+            ResetKey();
             StartCoroutine(Next());
         }
         else if(p2_attack!=p1_defend)
@@ -177,7 +177,7 @@ public class AMT_Manager : MonoBehaviour
             Ue_Face_2.SetActive(true);
             GameManager._1pWinCount++;
             _startgame_p1_Attack = false;
-            Invoke("ResetKey", 2);
+            ResetKey();
             _text.text = "Player1‚ÌŸ‚¿";
             StartCoroutine(Next());
         }
@@ -187,7 +187,7 @@ public class AMT_Manager : MonoBehaviour
             Migi_Face_2.SetActive(true);
             GameManager._1pWinCount++;
             _startgame_p1_Attack = false;
-            Invoke("ResetKey", 2);
+            ResetKey();
             _text.text = "Player1‚ÌŸ‚¿";
             StartCoroutine(Next());
         }
@@ -197,7 +197,7 @@ public class AMT_Manager : MonoBehaviour
             Hidari_Face_2.SetActive(true);
             GameManager._1pWinCount++;
             _startgame_p1_Attack = false;
-            Invoke("ResetKey", 2);
+            ResetKey();
             _text.text = "Player1‚ÌŸ‚¿";
             StartCoroutine(Next());
         }
@@ -207,8 +207,8 @@ public class AMT_Manager : MonoBehaviour
             Sita_Face_2.SetActive(true);
             GameManager._1pWinCount++;
             _startgame_p1_Attack = false;
-            Invoke("ResetKey", 2);
-           // _janken.SetActive(true);
+            ResetKey();
+            // _janken.SetActive(true);
             _text.text = "Player1‚ÌŸ‚¿";
             StartCoroutine(Next()); ;
 
