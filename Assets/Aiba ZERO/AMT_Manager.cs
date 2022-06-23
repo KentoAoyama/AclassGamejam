@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 public class AMT_Manager : MonoBehaviour
@@ -71,7 +72,22 @@ public class AMT_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_next_attack1)   //P1‚ªŽw
+        if(GameManager._1pWinCount==3)
+        {
+            SceneManager.LoadScene("ResultScene");
+
+        }
+        if (GameManager._2pWinCount== 3)
+        {
+            SceneManager.LoadScene("ResultScene");
+
+        }
+
+
+
+
+
+        if (_next_attack1)   //P1‚ªŽw
         {
             Defolt_Face2.SetActive(true);
             Defolt_Yubi1.SetActive(true);
