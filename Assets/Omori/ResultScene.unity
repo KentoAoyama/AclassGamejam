@@ -330,7 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _score: {fileID: 1207568465}
   _winner: {fileID: 92717969}
-  _kimarite: {fileID: 92717969}
+  _kimarite: {fileID: 1700460811}
   _distance: 0.05
   _maxSize: 99
   _kimariteWord:

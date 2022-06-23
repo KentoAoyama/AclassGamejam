@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Omori/ResultScene.unity
     guid: 0b0c089fd4e9a9242a0c41b81b2a9627
+  - enabled: 1
+    path: Assets/Yosizawa/game UI.unity
+    guid: 3a057799f856bee418dd2d5181ed3fed
   m_configObjects: {}
