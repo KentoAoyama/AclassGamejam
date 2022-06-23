@@ -7,8 +7,9 @@ public class audioController : MonoBehaviour
 {
     [SerializeField] Slider _slider;
     [SerializeField] AudioSource _volume;
-    public static float _hikitugi;
+     public static float _hikitugi;
     [SerializeField] GameObject _Gslider;
+
     // Start is called before the first frame update
     void Start()
     {
